@@ -1,7 +1,5 @@
 # code-institute/love-maths
 
-This is a line that is added
-
 ## Getting Started
 
 Download links:
