@@ -83,17 +83,18 @@ function calculateCorrectAnswer() {
   let operand2 = parseInt(document.getElementById("operand2").innerText);
   let operator = document.getElementById("operator").innerText;
 
-  if (operator === "+") {
-    return [operand1 + operand2, "addition"];
-  } else if (operator === "x") {
-    return [operand1 * operand2, "multiply"];
-  } else if (operator === "-") {
-    return [operand1 - operand2, "subtract"];
-  } else if (operator === "/") {
-    return [operand1 / operand2, "division"];
-  } else {
-    alert(`unimplemented operator ${operator}`);
-    throw `unimplemented operator ${operator}.Aborting!`;
+  switch (operator) {
+    case "+":
+      return [operand1 + operand2, "addition"];
+    case "x":
+      return [operand1 * operand2, "multiply"];
+    case "-":
+      return [operand1 - operand2, "subtract"];
+    case "/":
+      return [operand1 / operand2, "division"];
+    default:
+      alert(`unimplemented operator ${operator}`);
+      throw `unimplemented operator ${operator}.Aborting!`;
   }
 }
 
