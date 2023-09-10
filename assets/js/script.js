@@ -38,17 +38,18 @@ function runGame(gameType) {
   let num1 = Math.floor(Math.random() * 25) + 1;
   let num2 = Math.floor(Math.random() * 25) + 1;
 
-  if (gameType === "addition") {
-    displayAdditionQuestions(num1, num2);
-  } else if (gameType === "multiply") {
-    displayMultiplyQuestions(num1, num2);
-  } else if (gameType === "subtract") {
-    displaySubtractQuestions(num1, num2);
-  } else if (gameType === "division") {
-    displayDivideQuestions(num1, num2);
-  } else {
-    alert(`unknown game type: ${gameType}`);
-    throw `unknown game type: ${gameType}.Aborting!`;
+  switch (gameType) {
+    case "addition":
+      return displayAdditionQuestions(num1, num2);
+    case "multiply":
+      return displayMultiplyQuestions(num1, num2);
+    case "subtract":
+      return displaySubtractQuestions(num1, num2);
+    case "division":
+      return displayDivideQuestions(num1, num2);
+    default:
+      alert(`unknown game type: ${gameType}`);
+      throw `unknown game type: ${gameType}.Aborting!`;
   }
 }
 
